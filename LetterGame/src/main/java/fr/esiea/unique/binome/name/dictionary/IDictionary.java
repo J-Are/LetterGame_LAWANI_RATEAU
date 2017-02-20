@@ -5,4 +5,6 @@ package fr.esiea.unique.binome.name.dictionary;
  */
 public interface IDictionary {
     boolean isWord(String word);
+    
+    
 }
