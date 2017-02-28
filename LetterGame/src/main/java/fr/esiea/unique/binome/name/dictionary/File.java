@@ -18,10 +18,11 @@ public class File {
 			BufferedReader br=new BufferedReader(ipsr);
 			String ligne;
 			while ((ligne=br.readLine())!=null){
+				
 				System.out.println(ligne);
 				//chaine+=ligne+"\n";
 				
-				if(mot.equalsIgnoreCase(ligne)==true){
+				if(mot.equalsIgnoreCase(switch_Letter_without_accent(ligne))==true){
 					return true;
 				}
 			}
@@ -33,5 +34,20 @@ public class File {
 		return false;
 
   }
+	public String switch_Letter_without_accent(String mot){
+		mot=mot.replace("é", "e");
+		mot=mot.replace("è", "e");
+		mot=mot.replace("ê", "e");
+		mot=mot.replace("ë", "e");
+		mot=mot.replace("î", "i");
+		mot=mot.replace("ï", "i");
+		mot=mot.replace("ô", "o");
+		mot=mot.replace("à", "a");
+		mot=mot.replace("â", "a");
+		
+		//System.out.println("MOT sans accent: "+mot);
+		
+		return mot;
+	}
 
 }

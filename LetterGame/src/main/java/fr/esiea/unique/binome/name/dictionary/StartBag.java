@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Random;
 
 public class StartBag {
+
 	public ArrayList array_pot_commun = new ArrayList();
 	private int indexLetter;
 		
@@ -14,12 +15,34 @@ public class StartBag {
 		return this.array_pot_commun;
 	}
 	
+	public ArrayList delete_pot_commun(ArrayList pot_commun, char letter){
+		
+	 for(int i=0;i<pot_commun.size();i++){
+		
+		 if(this.array_pot_commun.contains(letter)==true){
+			 
+		   System.out.println("Suppression");
+		   this.array_pot_commun.remove(i);
+		 
+		 }
+
+		 
+	 }
+	 
+	 return this.array_pot_commun;
+	}	 
+	 
+	 
+	
+	
 	public void print_Pot_commun(ArrayList pot_commun){
 
-		System.out.println("POT COMMUN: ");
-	
-	for(int i = 0; i < pot_commun.size(); i++)
-	    {	
+
+		System.out.println("POT COMMUN: ");	
+
+		for(int i = 0; i < pot_commun.size(); i++)
+	    {
+
 	      System.out.println("donnée à l'indice " + i + " = " + pot_commun.get(i));
 	    }  
 		
@@ -40,12 +63,15 @@ public class StartBag {
 	 		return 2;
 	 	}
 	 	if(letter_P1==letter_P2){
+
 	 	    return 3;
+
 	 	}
 	 	
 	 	return 0;
 	}
 	
+
 	public boolean is_the_Word_present_in_the_Bag(ArrayList pot_commun, char lettre){
 		return pot_commun.contains(lettre);
 		
@@ -64,6 +90,5 @@ public class StartBag {
 		
 		return true;
 	}
-	
-	
+
 }
