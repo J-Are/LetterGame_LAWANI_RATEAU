@@ -11,14 +11,14 @@ public class Player {
 	private char tabLetter[]={'a','a','a','a','a','b','c','d','e','e','e','e','e','f','g','h','i','i','i','i','i','j','k','l','m','n','o','o','o','o','o','p','k','r','s','t','u','u','u','u','u','v','w','x','y','z'};
 	private int nb_mot=0;
 
-	private ArrayList liste_lettre=new ArrayList();
-	private ArrayList liste_mot_joueur=new ArrayList();
-	private String mot_joueur;
+	private ArrayList listeLettre=new ArrayList();
+	private ArrayList listeMotJoueur=new ArrayList();
+	private String motJoueur;
 	
 	private int numeroJoueur;
 	
 
-	public char start_Random_Letter(){
+	public char startRandomLetter(){
 		Random r = new Random();
 		this.indexLetter = r.nextInt(45);
 		return this.tabLetter[this.indexLetter];
@@ -27,11 +27,11 @@ public class Player {
 	}
 	
 	public void setMotJoueur(String mot){
-		this.mot_joueur=mot;
+		this.motJoueur=mot;
 	}
 	
 	public String getMotJoueur(){
-		return this.mot_joueur;
+		return this.motJoueur;
 	}
 	
 	
@@ -43,31 +43,31 @@ public class Player {
 		return this.numeroJoueur;
 	}
 
-    public void two_Letters_more_in_the_Bag(char letter_P1, StartBag pot_commun){
+    public void twoLettersMoreInTheBag(char letter_P1, StartBag pot_commun){
 		
 		for(int i=0;i<2;i++){
-			letter_P1=start_Random_Letter();
-			pot_commun.add_pot_commun(letter_P1);
+			letter_P1=startRandomLetter();
+			pot_commun.addPotCommun(letter_P1);
 			
 			
 		}
     }
    
-    public void one_Letter_more_in_the_Bag(char letter_P1, StartBag pot_commun){
+    public void oneLetterMoreInTheBag(char letter_P1, StartBag pot_commun){
 		
-			letter_P1=start_Random_Letter();
-			pot_commun.add_pot_commun(letter_P1);
+			letter_P1=startRandomLetter();
+			pot_commun.addPotCommun(letter_P1);
 		
     }
     
-    public ArrayList add_pot_commun(char letter){
-		this.liste_lettre.add(letter);
-		return this.liste_lettre;
+    public ArrayList addPotCommun(char letter){
+		this.listeLettre.add(letter);
+		return this.listeLettre;
 	}
     
     public ArrayList add_word_in_the_player_list(String word){
-		this.liste_mot_joueur.add(word);
-		return this.liste_mot_joueur;
+		this.listeMotJoueur.add(word);
+		return this.listeMotJoueur;
 	}
     
     public char[] switch_into_CharTab(String mot){
@@ -99,15 +99,15 @@ public class Player {
     
     public void run(Player joueur, StartBag pot_commun, char letter_joueur, File fichier){
     	
-    	joueur.two_Letters_more_in_the_Bag(letter_joueur,pot_commun);
-    	pot_commun.print_Pot_commun(pot_commun.array_pot_commun);
+    	joueur.twoLettersMoreInTheBag(letter_joueur,pot_commun);
+    	pot_commun.print_Pot_commun(pot_commun.arrayPotCommun);
     	
-    	this.mot_joueur=enter_a_Word();
+    	this.motJoueur=enter_a_Word();
     	
-        char tab_mot[]=joueur.switch_into_CharTab(this.mot_joueur);
+        char tab_mot[]=joueur.switch_into_CharTab(this.motJoueur);
         joueur.printCharTab(tab_mot);
         
-        boolean retour=pot_commun.is_it_a_good_Word(pot_commun.array_pot_commun,tab_mot);
+        boolean retour=pot_commun.isItAGoodWord(pot_commun.arrayPotCommun,tab_mot);
         
         if(retour==true){
           System.out.println("Les lettres sont dans le pot commun");
@@ -115,32 +115,32 @@ public class Player {
         
         while(retour==false){
             System.out.println("Les lettres ne sont pas dans le pot commun");
-            pot_commun.print_Pot_commun(pot_commun.array_pot_commun);
-            this.mot_joueur=enter_a_Word();
-            tab_mot=joueur.switch_into_CharTab(this.mot_joueur);
-            retour=pot_commun.is_it_a_good_Word(pot_commun.array_pot_commun,tab_mot);
+            pot_commun.print_Pot_commun(pot_commun.arrayPotCommun);
+            this.motJoueur=enter_a_Word();
+            tab_mot=joueur.switch_into_CharTab(this.motJoueur);
+            retour=pot_commun.isItAGoodWord(pot_commun.arrayPotCommun,tab_mot);
             
             
           }
 
         boolean is_Word;
-        is_Word=fichier.read_File(this.mot_joueur);
+        is_Word=fichier.read_File(this.motJoueur);
         System.out.println("Retour fichier: "+is_Word);
         
         while(is_Word==false){
         	System.out.println("Ce mot n'existe pas, veuillez en entrer un nouveau svp");
-        	pot_commun.print_Pot_commun(pot_commun.array_pot_commun);
-        	this.mot_joueur=enter_a_Word();
-            tab_mot=joueur.switch_into_CharTab(this.mot_joueur);
-            is_Word=fichier.read_File(this.mot_joueur);
+        	pot_commun.print_Pot_commun(pot_commun.arrayPotCommun);
+        	this.motJoueur=enter_a_Word();
+            tab_mot=joueur.switch_into_CharTab(this.motJoueur);
+            is_Word=fichier.read_File(this.motJoueur);
         }
         
         
         if(is_Word==true){
-        	add_word_in_the_player_list(this.mot_joueur);
-        	print_List_of_Words_Player(this.liste_mot_joueur,joueur);
-        	joueur.one_Letter_more_in_the_Bag(letter_joueur, pot_commun);
-        	pot_commun.print_Pot_commun(pot_commun.array_pot_commun);
+        	add_word_in_the_player_list(this.motJoueur);
+        	print_List_of_Words_Player(this.listeMotJoueur,joueur);
+        	joueur.oneLetterMoreInTheBag(letter_joueur, pot_commun);
+        	pot_commun.print_Pot_commun(pot_commun.arrayPotCommun);
         }
     	
     }
@@ -149,11 +149,11 @@ public class Player {
     	
     	Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir un mot :");
-        this.mot_joueur = sc.nextLine();
+        this.motJoueur = sc.nextLine();
         
-        System.out.println("Vous avez saisi : " +this.mot_joueur);
+        System.out.println("Vous avez saisi : " +this.motJoueur);
         
-        return this.mot_joueur;
+        return this.motJoueur;
         
     }
      

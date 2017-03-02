@@ -7,29 +7,29 @@ import java.util.Random;
 
 public class StartBag {
 
-	public ArrayList array_pot_commun = new ArrayList();
+	public ArrayList arrayPotCommun = new ArrayList();
 	private int indexLetter;
 		
-	public ArrayList add_pot_commun(char letter){
-		this.array_pot_commun.add(letter);
-		return this.array_pot_commun;
+	public ArrayList addPotCommun(char letter){
+		this.arrayPotCommun.add(letter);
+		return this.arrayPotCommun;
 	}
 	
 	public ArrayList delete_pot_commun(ArrayList pot_commun, char letter){
 		
 	 for(int i=0;i<pot_commun.size();i++){
 		
-		 if(this.array_pot_commun.contains(letter)==true){
+		 if(this.arrayPotCommun.contains(letter)==true){
 			 
 		   System.out.println("Suppression");
-		   this.array_pot_commun.remove(i);
+		   this.arrayPotCommun.remove(i);
 		 
 		 }
 
 		 
 	 }
 	 
-	 return this.array_pot_commun;
+	 return this.arrayPotCommun;
 	}	 
 	 
 	 
@@ -72,16 +72,16 @@ public class StartBag {
 	}
 	
 
-	public boolean is_the_Word_present_in_the_Bag(ArrayList pot_commun, char lettre){
+	public boolean isTheWordPresentInTheBag(ArrayList pot_commun, char lettre){
 		return pot_commun.contains(lettre);
 		
 	}
 	
-	public boolean is_it_a_good_Word(ArrayList pot_commun,char tab_mot[]){
+	public boolean isItAGoodWord(ArrayList pot_commun,char tab_mot[]){
 		boolean bool=true;
 		
 		for(int i=0;i<tab_mot.length;i++){
-			bool=is_the_Word_present_in_the_Bag(pot_commun,tab_mot[i]);
+			bool=isTheWordPresentInTheBag(pot_commun,tab_mot[i]);
 		 
 			if(bool==false){
 				return false;

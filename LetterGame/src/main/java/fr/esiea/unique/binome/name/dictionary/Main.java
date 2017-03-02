@@ -23,16 +23,16 @@ public class Main {
 	while(start==3){		
 
 		
-		letter_P1=joueur1.start_Random_Letter();
+		letter_P1=joueur1.startRandomLetter();
 		System.out.println("Lettre_P1: "+letter_P1);
 		
-		pot_Commun.add_pot_commun(letter_P1);
+		pot_Commun.addPotCommun(letter_P1);
 		
-		letter_P2=joueur2.start_Random_Letter();
-		pot_Commun.add_pot_commun(letter_P2);
+		letter_P2=joueur2.startRandomLetter();
+		pot_Commun.addPotCommun(letter_P2);
 		System.out.println("Lettre_P2: "+letter_P2);
 		
-		pot_Commun.print_Pot_commun(pot_Commun.array_pot_commun);
+		pot_Commun.print_Pot_commun(pot_Commun.arrayPotCommun);
 		
 		int ASCII_letterP1=pot_Commun.toASCII(letter_P1);
 		int ASCII_letterP2=pot_Commun.toASCII(letter_P2);
@@ -46,8 +46,8 @@ public class Main {
 		
 		if(start==3){
 				
-			pot_Commun.delete_pot_commun(pot_Commun.array_pot_commun,letter_P1);
-			pot_Commun.delete_pot_commun(pot_Commun.array_pot_commun,letter_P2);
+			pot_Commun.delete_pot_commun(pot_Commun.arrayPotCommun,letter_P1);
+			pot_Commun.delete_pot_commun(pot_Commun.arrayPotCommun,letter_P2);
 			
 		}
 		
