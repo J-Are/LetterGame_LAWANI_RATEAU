@@ -10,7 +10,12 @@ public class Main {
  	// TODO Auto-generated method stub
 
 		int start=3;
-
+		StartGame jeu=new StartGame();
+	
+		jeu.kindOfGame();
+   
+	 
+	if(jeu.getChoix()==1){	
 		System.out.println("Début de la partie: ");
 		Player joueur1= new Player();
 		Player joueur2= new Player();
@@ -42,7 +47,7 @@ public class Main {
 		
 
 		start=pot_Commun.who_Starts(letter_P1, letter_P2);
-		System.out.println("Player: "+start+" commence");
+		
 		
 		if(start==3){
 				
@@ -52,23 +57,51 @@ public class Main {
 		}
 		
      }
+
+ while(true){
 	
+	 System.out.println("Player: "+start+" JOUE");
 	 if(start==1){
 		
 		 joueur1.setNumeroJoueur(1);
-		 joueur1.run(joueur1,pot_Commun, letter_P1,fichier);
+		 joueur1.run(joueur1,pot_Commun, letter_P1,fichier,joueur2);
+		 boolean finDuJeu=joueur1.endOfTheGame(joueur2);
 		 
+		 if(finDuJeu==true){
+			 
+			 System.exit(0);
+		 }
+		 
+		 start=2;
 	 } 
      
-     
+	 System.out.println("Player: "+start+" JOUE");
+	 
      if(start==2){
     	 
     	 joueur2.setNumeroJoueur(2);
-    	 joueur2.run(joueur2,pot_Commun, letter_P1,fichier);	 
+    	 joueur2.run(joueur2,pot_Commun, letter_P1,fichier,joueur1);
+    	 
+         boolean finDuJeu=joueur2.endOfTheGame(joueur1);
+		 
+		 if(finDuJeu==true){
+			 
+			 System.exit(0);
+		 }
+    	 start=1;
      }
-   
+ }
      
     }
+	
+	if(jeu.getChoix()==2){
+		
+		
+	}
+ }
+	
+	
+
 }
 	
 	

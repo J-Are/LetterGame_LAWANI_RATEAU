@@ -10,6 +10,8 @@ public class StartBag {
 	public ArrayList array_pot_commun = new ArrayList();
 	private int indexLetter;
 		
+	
+	
 	public ArrayList add_pot_commun(char letter){
 		this.array_pot_commun.add(letter);
 		return this.array_pot_commun;
@@ -31,8 +33,27 @@ public class StartBag {
 	 
 	 return this.array_pot_commun;
 	}	 
-	 
-	 
+
+	
+	public ArrayList deleteLettersWhenWordIsGood(ArrayList pot_commun, char tab_mot[]){
+		
+		 for(int i=0;i<tab_mot.length;i++){
+			 
+			 for(int j=0;j<pot_commun.size();j++){
+			
+			  if(this.array_pot_commun.get(j).equals(tab_mot[i])){
+				 
+			   System.out.println("Suppression Lettre: "+tab_mot[i]+"à la case "+i);
+			   this.array_pot_commun.remove(j);
+			   
+			 
+			  }
+			 }
+			 
+		 }
+		 
+		 return this.array_pot_commun;
+		}
 	
 	
 	public void print_Pot_commun(ArrayList pot_commun){

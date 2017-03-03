@@ -19,7 +19,7 @@ public class File {
 			String ligne;
 			while ((ligne=br.readLine())!=null){
 				
-				System.out.println(ligne);
+				//System.out.println(ligne);
 				//chaine+=ligne+"\n";
 				
 				if(mot.equalsIgnoreCase(switch_Letter_without_accent(ligne))==true){
