@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class File {
 	
-	public boolean read_File(String mot){
+	public boolean readFile(String mot){
 		String chaine="";
 		String fichier ="src/main/resources/dico.txt";
 		
