@@ -37,7 +37,7 @@ On a choisit de réaliser 5 classes permettant de créer des objets précis
   On utilise cette classe pour dissocier un mot en deux mots 
 
  
- # Exercice sur les principes SOLID/Design Patterns
+ #  Exercice sur les principes SOLID/Design Patterns
  
  Nous avons utilisé le principe SOLID dans l'architecture de 
  notre code au lieu des designs patterns, 
