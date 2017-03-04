@@ -5,7 +5,7 @@ Projet réalisé par :
     Najim LAWANI TCSI2 4A ESIEA Paris
     Julien RATEAU TCSE2 4A ESIEA Paris
 
-Nous avons utilisé 'Maven' pour la gestion du projet. Nous travaillons avec un seul package, fr.esiea.unique.elayathamby.saada, mais l'ensemble du projet est découpé en différentes classes :
+Nous avons utilisé 'Maven' pour la gestion du projet. Nous travaillons avec un seul package, package fr.esiea.unique.binome.name.dictionary, mais l'ensemble du projet est découpé en différentes classes :
 
 # Explications sur l'architecture utilisée
 
@@ -34,5 +34,50 @@ On a choisit de réaliser 5 classes permettant de créer des objets précis
     La capacité d'avoir une classe étendu et modifiable seulement via l'extension.
 
     Nous avons utilisé deux principes SOLID, à savoir le S et le O dans notre code, comme nous n'avons pas d'interfaces ni d'instances nous n'avons pas pu implémenté les autres principes.
+    
+    
+# Les tests unitaire
+
+Nos test unitaire ne couvre pas tout le projet. Nous avons tester quelques une des méthodes de notre classe et tout marche bien
+
+
+
+# Utilisation du pmd
+
+PMD est un framework qui permet d'analyser le code source Java. Il possède un certain nombre de règles pour assurer la qualité du code source : révèle les bouts de codes inutiles, les imbrications complexes...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
