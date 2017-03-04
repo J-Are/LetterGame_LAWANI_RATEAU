@@ -54,7 +54,7 @@ On a choisit de réaliser 5 classes permettant de créer des objets précis
  nous n'avons pas pu implémenté les autres principes.
     
     
-# Les tests unitaire
+#  Les tests unitaire
 
 Nos test unitaire ne couvre pas tout le projet.
 Nous avons tester quelques une des méthodes 
@@ -62,7 +62,7 @@ de notre classe et tout marche bien
 
 
 
-# Utilisation du pmd
+#   Utilisation du pmd
 
 PMD est un framework qui permet d'analyser le code source Java.
 Il possède un certain nombre de règles pour assurer la qualité 
